@@ -1,8 +1,15 @@
 import React from 'react'
+import { useAppContext } from './utils/global.context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
+
+  // const { state, dispatch } = useAppContext();
+
+  // const toggleTheme = () => {
+  //   dispatch({ type: 'TOGGLE_THEME' });
+  // };
 
   return (
     <nav>
