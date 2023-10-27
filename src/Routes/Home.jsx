@@ -16,12 +16,12 @@ const Home = () => {
 
   return (
     <main className="" >
-      <h1>Nuestros especialistas</h1>
+      <h1>Home</h1>
       <div className='card-grid'>
         {/* Aqui deberias renderizar las cards */}
         
         {
-          dentists.map(dentist => <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id}/>)
+          dentists.map(dentist => <Card key={dentist.id}name={dentist.name} username={dentist.username} id={dentist.id}/>)
         }
       </div>
     </main>

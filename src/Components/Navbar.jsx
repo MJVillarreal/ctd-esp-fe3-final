@@ -1,17 +1,9 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
-import { useAppContext } from "./utils/global.context"
+import { Link, useNavigate } from "react-router-dom"
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-  // const { state, dispatch } = useAppContext();
-
-  // const toggleTheme = () => {
-  //   dispatch({ type: 'TOGGLE_THEME' });
-  // };
-
-  const navigate = useNavigate()
 
   return (
     <nav>
@@ -21,9 +13,9 @@ const Navbar = () => {
       <h1>DH ODONTO</h1>
 
       <div>
-        <a onClick={() => navigate(`/home`)}>Home</a>
-        <a onClick={() => navigate(`/contact`)}>Contact</a>
-        <a onClick={() => navigate(`/favs`)}>Favs</a>
+        <Link to="/home">Home</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to= "/favs">Favs</Link>
         <button className="themeButton">🌙</button>
       </div>
     </nav>
