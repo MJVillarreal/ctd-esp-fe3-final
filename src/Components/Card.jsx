@@ -2,16 +2,21 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 
-const Card = ({ name, username, id, addToFavorites }) => {
+const Card = ({ name, username, id, isFavorite, toggleFavorite }) => {
 
-  const addFav = ()=>{
+  const addFav = (e)=>{
     // Aqui iria la logica para agregar la Card en el localStorage
+    e.stopPropagation();
     
-    const cardData = JSON.stringify({ name, username, id });
+    const favorito = {
+      name: name,
+      username: username,
+      id: id
+    };
 
-    localStorage.setItem('favoriteCard', cardData);
+    localStorage.setItem(`fav_${id}`, JSON.stringify(favorito));
+    alert("¡Dentista añadido a favoritos correctamente!");
 
-    addToFavorites({ name, username, id });
   };
 
   const navigate = useNavigate();
