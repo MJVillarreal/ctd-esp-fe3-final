@@ -23,7 +23,7 @@ const Card = ({ name, username, id, addToFavorites }) => {
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         <img src="./images/doctor.jpg"></img>
-
+    
         <h4>{name}</h4>
         <p>{username}</p>
         <p>ID: {id}</p>

@@ -4,6 +4,7 @@ import './index.css';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 
 export const BasicLayout = ({children}) => {
@@ -19,9 +20,11 @@ export const BasicLayout = ({children}) => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BasicLayout>
-      <App/>
-    </BasicLayout>
+    <BrowserRouter>
+      <BasicLayout>
+        <App/>
+      </BasicLayout>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
