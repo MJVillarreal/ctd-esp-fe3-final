@@ -22,19 +22,30 @@ const Detail = () => {
     <>
       {dentist ? (
         <div>
-          <h1>Detail Dentist id</h1>
+          <h1>Información del dentista</h1>
 
         {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
         {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
 
-          <p>Name: {dentist.name}</p>
-          <p>Email: {dentist.email}</p>
-          <p>Phone: {dentist.phone}</p>
-          <p>Website: {dentist.website}</p>
-
+          <table>
+            <tbody>
+              <tr>
+                <td>Nombre</td>
+                <td>Email</td>
+                <td>Telefono</td>
+                <td>Website</td>
+              </tr>
+              <tr>
+                <td>{dentist.name}</td>
+                <td>{dentist.email}</td>
+                <td>{dentist.phone}</td>
+                <td>{dentist.website}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       ) : (
-        <p>Loading...</p> 
+        <h2>Loading...</h2> 
       )}
     </>
   )
