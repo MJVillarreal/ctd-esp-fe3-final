@@ -21,7 +21,7 @@ const Home = () => {
         {/* Aqui deberias renderizar las cards */}
         
         {
-          dentists.map(dentist => <Card name={dentist.name} username={dentist.username} id={dentist.id}/>)
+          dentists.map(dentist => <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id}/>)
         }
       </div>
     </main>
