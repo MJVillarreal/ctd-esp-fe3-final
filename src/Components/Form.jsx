@@ -10,7 +10,8 @@ const Form = () => {
   });
 
   const [enviado, setEnviado] = useState(false);
-  const [error, setError] = useState('');
+  const [nombreError, setNombreError] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,26 +28,28 @@ const Form = () => {
 
     // Validación del nombre
     if (formData.nombre.length <= 5) {
-      setError('Por favor ingrese un nombre válido (más de 5 caracteres)');
+      setNombreError('Por favor ingrese un nombre válido (más de 5 caracteres)');
       hasError = true;
+    } else {
+      setNombreError("")
     }
 
     // Validación del email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setError('Por favor ingrese un correo electrónico válido');
+      setEmailError('Por favor ingrese un correo electrónico válido');
       hasError = true;
+    } else {
+      setEmailError("")
     }
 
     if (hasError) {
       setEnviado(false); 
-      return; 
     }
 
-    setError('');
-
-    console.log(formData);
-    setEnviado(true); 
+    if (formData.nombre.length > 5 && emailRegex.test(formData.email)) {
+      setEnviado(true);
+    }
   };
 
   return (
@@ -75,10 +78,11 @@ const Form = () => {
         <button type="submit">Enviar</button>
       </form>
 
-      {error && <div className="mensajeError">{error}</div>}
+      {nombreError && <div>{nombreError}</div>}
+      {emailError && <div>{emailError}</div>}
 
       {enviado && (
-        <div className="mensajeExito">
+        <div>
           <h3>Gracias {formData.nombre}, te contactaremos cuando antes vía mail</h3>
         </div>
       )}
