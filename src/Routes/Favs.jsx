@@ -30,6 +30,7 @@ const Favs = () => {
             name={favorito.name}
             username={favorito.username}
             id={favorito.id}
+            isFavorite={true}
           />
         ))}
         

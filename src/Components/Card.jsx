@@ -6,6 +6,7 @@ const Card = ({ name, username, id, isFavorite, toggleFavorite }) => {
 
   const addFav = (e)=>{
     // Aqui iria la logica para agregar la Card en el localStorage
+
     e.stopPropagation();
     
     const favorito = {
@@ -14,9 +15,24 @@ const Card = ({ name, username, id, isFavorite, toggleFavorite }) => {
       id: id
     };
 
+    if (localStorage.getItem(`fav_${id}`)) {
+      alert("¡Este dentista ya está en tus favoritos!");
+      return;
+    }
+
     localStorage.setItem(`fav_${id}`, JSON.stringify(favorito));
     alert("¡Dentista añadido a favoritos correctamente!");
 
+  };
+
+  const removeFav = (e) => {
+    e.stopPropagation();
+
+    if (localStorage.getItem(`fav_${id}`)) {
+      localStorage.removeItem(`fav_${id}`);
+      alert("¡Dentista eliminado de tus favoritos!");
+      window.location.reload();
+    } 
   };
 
   const navigate = useNavigate();
@@ -34,7 +50,9 @@ const Card = ({ name, username, id, isFavorite, toggleFavorite }) => {
         <p>ID: {id}</p>
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">⭐</button>
+        <button onClick={isFavorite ? removeFav : addFav} className="favButton">
+          {isFavorite ? "❌" : "⭐"}
+        </button>
     </div>
   );
 };
