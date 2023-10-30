@@ -57,6 +57,7 @@ footer {
   justify-content: space-around;
   text-align: center;
   position: relative;
+  width: 100%;
   bottom: 0;
   padding: 1rem;
   margin-top: 2rem;
@@ -77,6 +78,10 @@ footer img {
 .socialMedia img {
   width: 2rem;
   padding-left: 1rem;
+}
+
+.contactBox {
+  margin: 2rem;
 }
 
 form{
