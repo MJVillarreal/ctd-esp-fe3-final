@@ -5,6 +5,11 @@ export const initialState = {
   apiData: null
 }
 
+export const ActionTypes = {
+  TOGGLE_THEME: 'TOGGLE_THEME',
+  API_DATA: 'API_DATA'
+}
+
 const reducer = (state, action) => {
   switch (action.type) {
 
@@ -16,7 +21,7 @@ const reducer = (state, action) => {
         theme: newTheme,
       };
 
-    case 'SET_API_DATA':
+    case 'API_DATA':
       return {
         ...state,
         apiData: action.payload,
@@ -25,6 +30,15 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+};
+
+export const loadApiData = (dispatch) => {
+  fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response) => response.json())
+  .then((data) => {
+    dispatch({ type: ActionTypes.API_DATA, payload: data });
+  })
+  .catch((error) => console.error('Error fetching data:', error));
 };
 
 export const ContextGlobal = createContext(undefined);
