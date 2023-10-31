@@ -12,6 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
@@ -31,7 +32,6 @@ nav{
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  background-color: rgb(196, 194, 194);
 }
 
 .themeButton {
@@ -145,10 +145,24 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.navbar.light {
+  background-color: rgb(196, 194, 194);
+}
+
+.links.dark {
+  background-color: #706f6f;
+}
+
+.dark {
   background-color: #12121296;
+  color: white ;
+}
+
+.dark > a {
   color: white;
 }
-.dark > a {
+
+.tableRow.dark {
+  background-color: #595757;
   color: white;
 }

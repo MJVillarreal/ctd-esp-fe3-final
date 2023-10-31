@@ -1,14 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Routes, Route } from "react-router-dom"
-
+import { ContextGlobal } from "./Components/utils/global.context"
 import Home from "./Routes/Home"
 import Contact from "./Routes/Contact"
 import Detail from "./Routes/Detail"
 import Favs from "./Routes/Favs"
 
 function App() {
+
+  const { state } = useContext(ContextGlobal);
+
   return (
-    <div className="App">
+    <div className={`App ${state.theme}`}>
       <Routes>
         <Route path="home" element={<Home />} />
         <Route path="contact" element={<Contact />} />
