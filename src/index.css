@@ -60,7 +60,6 @@ footer {
   width: 100%;
   bottom: 0;
   padding: 1rem;
-  margin-top: 2rem;
   background-color: red;
 }
 
@@ -81,7 +80,9 @@ footer img {
 }
 
 .contactBox {
-  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
 }
 
 form{
@@ -91,11 +92,16 @@ form{
   width: 30rem;
   height: 100px;
   margin: auto;
+  padding-bottom: 2rem;
 }
 
 .inputForm input, button {
   width: 100%;
   box-sizing: border-box;
+}
+
+.error {
+  padding-bottom: 1rem;
 }
 
 .card{
@@ -113,7 +119,7 @@ form{
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 0.5px solid #ff0040;
 }
 
 .card-grid{
@@ -124,15 +130,22 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.dentistInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
 }
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
+  width: 95%;
   display: table;
   border: 1px solid #ccc;
-
 }
 
 td, th {
@@ -143,6 +156,12 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.favs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .navbar.light {

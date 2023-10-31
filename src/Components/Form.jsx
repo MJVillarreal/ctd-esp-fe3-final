@@ -78,8 +78,8 @@ const Form = () => {
         <button type="submit">Enviar</button>
       </form>
 
-      {nombreError && <div>{nombreError}</div>}
-      {emailError && <div>{emailError}</div>}
+      {nombreError && <div className="error">{nombreError}</div>}
+      {emailError && <div className="error">{emailError}</div>}
 
       {enviado && (
         <div>

@@ -23,7 +23,7 @@ const Detail = () => {
   return (
     <>
       {dentist ? (
-        <div>
+        <div className={`dentistInfo ${state.theme}`}>
           <h1>Información del dentista</h1>
 
         {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
